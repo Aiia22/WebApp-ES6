@@ -45,14 +45,8 @@
   grid-column: 2/3;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-}
-
-#wrapper {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
+body {
+  font-family: Arial, Helvetica, Sans-serif;
+  background-color: #ffffff;
+  color: #333333;
 }

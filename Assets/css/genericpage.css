@@ -9,8 +9,8 @@
 
 .box {
   margin: 7px;
-  background-color: #fbfbfd;
-  color: #333333;
+  background-color: #333333;
+  color: #c5c6cb;
 }
 
 .box.item1 {
@@ -43,16 +43,4 @@
 
 .box.item8 {
   grid-column: 2/3;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-#wrapper {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
 }

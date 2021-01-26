@@ -1,0 +1,7 @@
+@import "utilities/config1";
+@import "utilities/grid";
+
+body {
+  font-family: $font-stack;
+  @include set-background($background-color);
+}
