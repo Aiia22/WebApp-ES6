@@ -45,6 +45,74 @@
   grid-column: 2/3;
 }
 
+.box h3 {
+  font-size: 28px;
+  padding: 12px;
+  text-align: center;
+}
+
+.box p {
+  text-align: justify;
+  font-size: 14px;
+  padding: 11 55px;
+  margin: 0 55px;
+}
+
+.header1 {
+  text-align: center;
+  background: fixed;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #ffffff;
+  color: #333333;
+  z-index: 1;
+}
+
+.header1 h1 {
+  margin: 0;
+  font-size: 44px;
+}
+
+.header1 nav {
+  height: 44px;
+  padding: 5px;
+  overflow: scroll;
+  background-color: #333333;
+  color: #c5c6cb;
+}
+
+.header1 nav ul {
+  display: flex;
+  height: 44px;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+}
+
+.header1 nav a {
+  background-color: #333333;
+  color: #c5c6cb;
+  display: block;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 100;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.header1 nav a:hover {
+  color: #ffffff;
+}
+
+.buttonNav {
+  text-decoration: none;
+  background-color: #333333;
+  border: none;
+  outline: none !important;
+}
+
 * {
   margin: 0;
   padding: 0;

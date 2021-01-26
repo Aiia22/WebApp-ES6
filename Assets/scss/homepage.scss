@@ -1,6 +1,8 @@
 @import "utilities/config1";
 @import "utilities/grid";
 
+@import "componants/header";
+@import "componants/button";
 body {
   font-family: $font-stack;
   @include set-background($background-color);
