@@ -13,7 +13,7 @@
   }
   nav {
     height: 44px;
-    padding: 5px;
+    padding-top: 5px;
     overflow: scroll;
     @include set-background($primary-color);
     ul {
@@ -28,7 +28,7 @@
       @include set-background($primary-color);
       display: block;
       text-decoration: none;
-      font-size: 15px;
+      font-size: 17px;
       font-weight: 100;
       cursor: pointer;
       transition: ease-in-out 0.3s;

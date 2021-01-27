@@ -35,6 +35,18 @@
   &.item8 {
     grid-column: 2/3;
   }
+  &.item9 {
+    grid-column: 1/2;
+    ul {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+  &.item10 {
+    grid-column: 2/3;
+  }
+
   h3 {
     font-size: 28px;
     padding: 12px;
@@ -45,5 +57,12 @@
     font-size: 14px;
     padding: 11 55px;
     margin: 0 55px;
+  }
+  ul {
+    padding: 11px;
+    height: 44px;
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
   }
 }
