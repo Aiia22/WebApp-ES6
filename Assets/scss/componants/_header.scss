@@ -7,9 +7,18 @@
   @include set-background($background-color);
   //background-attachment: fixed;
   z-index: 1;
+  .logo,
   h1 {
     margin: 0;
+    padding: 0;
     font-size: 44px;
+  }
+  .logoHeader {
+    display: inline-flex;
+    align-items: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
   nav {
     height: 44px;
