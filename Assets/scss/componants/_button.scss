@@ -1,3 +1,24 @@
+%btn {
+  display: flex;
+  padding: 11px 22px;
+  margin: 15px auto;
+  border: none;
+  border-radius: 22px;
+  transition: ease-in-out 200ms;
+  outline: none !important;
+  justify-self: center;
+  font-size: 15px;
+  &:hover {
+    filter: invert(1);
+    transform: scale(1.1);
+  }
+}
+
+.btn-article1 {
+  @extend %btn;
+  @include set-background(lighten($secondary-color, 3%));
+}
+
 .buttonNav {
   text-decoration: none;
   background-color: #333333;

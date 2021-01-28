@@ -2,8 +2,8 @@
   display: grid;
   height: 100vh;
   grid-template-columns: 1fr 1fr;
-  gap: 33px;
-  margin-top: 100px;
+  gap: 22px;
+  margin-top: 180px;
   padding: 0 40px;
 }
 
@@ -136,6 +136,28 @@
 
 .header1 nav a:hover {
   color: #ffffff;
+}
+
+.btn-article1 {
+  display: flex;
+  padding: 11px 22px;
+  margin: 15px auto;
+  border: none;
+  border-radius: 22px;
+  transition: ease-in-out 200ms;
+  outline: none !important;
+  justify-self: center;
+  font-size: 15px;
+}
+
+.btn-article1:hover {
+  filter: invert(1);
+  transform: scale(1.1);
+}
+
+.btn-article1 {
+  background-color: #cdced2;
+  color: #333333;
 }
 
 .buttonNav {
