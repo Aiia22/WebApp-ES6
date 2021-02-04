@@ -1,4 +1,4 @@
-.header1 {
+.header {
   text-align: center;
   background: fixed;
   width: 100%;
@@ -7,11 +7,13 @@
   @include set-background($background-color);
   //background-attachment: fixed;
   z-index: 1;
+
   .logo,
   h1 {
     margin: 0;
     padding: 0;
     font-size: 44px;
+    color: #625261;
   }
   .logoHeader {
     display: inline-flex;
@@ -20,9 +22,11 @@
     margin: 0;
     padding: 0;
   }
+  img {
+    vertical-align: middle;
+  }
   nav {
     height: 44px;
-    padding-top: 5px;
     overflow: scroll;
     @include set-background($primary-color);
     ul {
@@ -44,6 +48,22 @@
       &:hover {
         color: $background-color;
       }
+    }
+  }
+  #nav2 {
+    display: none;
+    .searchBox {
+      text-align: left;
+      text-decoration: none;
+      margin-top: 7px;
+      padding: 6px;
+      border: solid 1px $tiertary-color;
+      border-radius: 22px;
+      background-color: $primary-color;
+      color: $secondary-color;
+      outline: none;
+      transition: 200ms ease-in-out;
+      cursor: pointer;
     }
   }
 }

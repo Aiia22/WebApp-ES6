@@ -1,8 +1,10 @@
 @import "utilities/config1";
 @import "utilities/grid";
+@import "utilities/animations";
 
 @import "componants/header";
 @import "componants/button";
+@import "componants/loginToggle";
 * {
   margin: 0;
   padding: 0;

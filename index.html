@@ -4,30 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Assets/css/main.css"/>
+    <script src="https://kit.fontawesome.com/8995d23b9c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <title>WebApp-ES6</title>
 </head>
 <body>
   <!--Wrapper-->  
   <div id="wrapper" class="container-fluid">
   <!--Header--> 
-  <div class="header1 flex-container">
+  <div class="header flex-container">
      <ul class="logoHeader">
          <li><img class="logo" src="assets/images/logoApp2.png" alt="logo chess & meet" width="111"></li>
          <li><h1>Chess & Meet</h1></li>
         </ul>
 <!--Nav-->
-<nav id="Nav1">
+<nav id="nav1">
     <ul>
-        <li class="active nav"><a href="index.html"><img src="assets/images/home.svg" alt="home" width="30"></a></li>
+        <li class="active nav"><a href="index.html"><img class="navIcons"src="assets/images/home.svg" alt="home" width="30"></a></li>
         <li class="nav"><a href="#">General</a></li>
         <li class="nav"><a href="#">Opennings</a></li>
         <li class="nav"><a href="#">Middlegames</a></li>
         <li class="nav"><a href="#">Endgames</a></li>
         <li class="nav"><a href="#">Mygame</a></li>
         <li class="nav"><a href="#">News</a></li>
-        <li class="nav"><button class="buttonNav"><img src="assets/images/loupe.svg" alt="home" width="30"></button></li>
-        <li class="nav"><button class="buttonNav"><img src="assets/images/user.svg" alt="home" width="30"></button></li>
+        <li class="nav"><button class="buttonNav"onclick="searchBoxNav(event)"><img class="navIcons"src="assets/images/loupe.svg" alt="home" width="30"></button></li>
+        <li class="nav"><button class="buttonNav" onclick="logToggle(event)"><img class="navIcons"src="assets/images/user.svg" alt="home" width="30"></button></li>
     </ul>
+
+    <!--Login toggle-->
+<div class="overlay">
+    <div class="toggle">
+        <form role="form" class="user-form"id="registerForm">
+            <h1>Register</h1>
+            <div class="form-controler">
+                <input type="text"autocomplete="off" placeholder="Username"seize="33">
+                <i class="fas fa-check-circle "></i><i class="fas fa-exclamation-circle"></i><small>Error message</small>
+            </div>
+            <div class="form-controler">
+                <input autocomplete="off" placeholder="Email"seize="33">
+                <i class="fas fa-check-circle "></i><i class="fas fa-exclamation-circle"></i><small>Error message</small>
+            </div>
+            <div class="form-controler">
+                <input autocomplete="off" placeholder="Password" seize="33">
+            </div>
+            <div class="form-controler">
+                <input autocomplete="off" placeholder="Password check" seize="33">
+                <i class="fas fa-check-circle "></i><i class="fas fa-exclamation-circle"></i><small>Error message</small>
+            </div>
+            <button class="inputButton">Create</button>
+            <p>Already registered? <button class="logRegButton"onclick="userLog(event)">Login</button></p>
+        </form>
+        
+
+        <form role="form" class="user-form" id="loginForm">
+            <h1>Login</h1>
+            <div class="form-controler">
+                <input type="text" autocomplete="off" placeholder="Username" seize="33">
+            </div>
+            <div class="form-controler">
+                <input autocomplete="off" placeholder="Email" seize="33">
+            </div>
+            <div class="form-controler">
+                <input autocomplete="off" placeholder="Password" seize="33">
+            </div>
+            <button class="inputButton">Login</button>
+            <p>Not a registered? <button class="logRegButton"onclick="userLog(event)">Register</button></p>
+        </form>
+    </div>
+</div>
+</nav>
+<nav id="nav2">
+<form method="get" action="/search" id="search">
+    <img id="SearchIcon"src="assets/images/loupe.svg" alt="Search Icon"width="15"/>
+    <input class="searchBox" type="text" size="50" autocomplete="off"placeholder="Search..." />
+    <button class="buttonNav"onclick="searchBoxNav(event)"><img class="navIcons"onclick="document.querySelector('.searchBox').value=''"src="Assets/images/close.svg" alt="close box" width="10"/></button>
+</form>
 </nav>
     
     </div>

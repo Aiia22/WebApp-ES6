@@ -80,7 +80,15 @@
   margin: 0;
 }
 
-.header1 {
+.navIcons {
+  transition: all 0.2s ease-in-out;
+}
+
+.navIcons:hover {
+  transform: scale(1.2);
+}
+
+.header {
   text-align: center;
   background: fixed;
   width: 100%;
@@ -91,14 +99,15 @@
   z-index: 1;
 }
 
-.header1 .logo,
-.header1 h1 {
+.header .logo,
+.header h1 {
   margin: 0;
   padding: 0;
   font-size: 44px;
+  color: #625261;
 }
 
-.header1 .logoHeader {
+.header .logoHeader {
   display: inline-flex;
   align-items: center;
   list-style-type: none;
@@ -106,15 +115,18 @@
   padding: 0;
 }
 
-.header1 nav {
+.header img {
+  vertical-align: middle;
+}
+
+.header nav {
   height: 44px;
-  padding-top: 5px;
   overflow: scroll;
   background-color: #333333;
   color: #c5c6cb;
 }
 
-.header1 nav ul {
+.header nav ul {
   display: flex;
   height: 44px;
   justify-content: space-around;
@@ -123,7 +135,7 @@
   margin: 0;
 }
 
-.header1 nav a {
+.header nav a {
   background-color: #333333;
   color: #c5c6cb;
   display: block;
@@ -134,8 +146,26 @@
   transition: ease-in-out 0.3s;
 }
 
-.header1 nav a:hover {
+.header nav a:hover {
   color: #ffffff;
+}
+
+.header #nav2 {
+  display: none;
+}
+
+.header #nav2 .searchBox {
+  text-align: left;
+  text-decoration: none;
+  margin-top: 7px;
+  padding: 6px;
+  border: solid 1px #423f3f;
+  border-radius: 22px;
+  background-color: #333333;
+  color: #c5c6cb;
+  outline: none;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
 }
 
 .btn-article1 {
@@ -165,6 +195,152 @@
   background-color: #333333;
   border: none;
   outline: none !important;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+}
+
+.overlay.open {
+  display: flex;
+  animation: show-overlay 0.3s;
+}
+
+@keyframes show-overlay {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlay .toggle {
+  padding: 30px 60px;
+  border-radius: 22px;
+  background-color: rgba(51, 51, 51, 0.92);
+  color: #c5c6cb;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.overlay .toggle .inputButton {
+  background-color: #5a5858;
+  color: #c9cace;
+  border: none;
+  border-radius: 42px;
+  padding: 11px 55px;
+  margin-top: 15px;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.overlay .toggle .inputButton:hover, .overlay .toggle .inputButton:active {
+  background-color: #423f3f;
+  color: #ffffff;
+}
+
+.overlay .toggle .logRegButton {
+  border: none;
+  background: none;
+  color: #c5c6cb;
+  text-decoration: underline;
+  margin-top: 11px;
+  outline: none;
+}
+
+.overlay .toggle .logRegButton:hover {
+  color: #ffffff;
+}
+
+.overlay .toggle p {
+  position: relative;
+  width: 100%;
+  font-size: 17px;
+}
+
+.overlay .toggle .user-Form .userFormHeader {
+  border-bottom: 4px solid #c5c6cb;
+  margin: 22px;
+  text-transform: uppercase;
+}
+
+.overlay .toggle .user-Form .userFormHeader h1 {
+  font-size: 33px;
+}
+
+.overlay .toggle .form-controler {
+  position: relative;
+  padding: 5px;
+}
+
+.overlay .toggle .form-controler input {
+  display: block;
+  color: #333333;
+  border: solid 1px #333333;
+  border-radius: 42px;
+  margin: 0 0 11px;
+  padding: 8px;
+  outline: none;
+  width: 100%;
+  transition: all 200ms ease-in-out;
+}
+
+.overlay .toggle .form-controler input:focus, .overlay .toggle .form-controler input:active {
+  border-color: #c5c6cb;
+}
+
+.overlay .toggle .form-controler.success input {
+  border-color: #2ecc71;
+}
+
+.overlay .toggle .form-controler.error input {
+  border-color: #e74c3c;
+}
+
+.overlay .toggle .form-controler i {
+  visibility: hidden;
+  position: relative;
+  top: 20px;
+  right: -15px;
+}
+
+.overlay .toggle .form-controler.success i.fa-check-circle {
+  color: #2ecc71;
+  visibility: visible;
+}
+
+.overlay .toggle .form-controler.Error i.fa-exclamation-circle {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.overlay .toggle .form-controler small {
+  visibility: hidden;
+  position: absolute;
+  top: 45px;
+  left: 15px;
+}
+
+.overlay .toggle .form-controler.error small {
+  color: #e74c3c;
+  visibility: visible;
+}
+
+.overlay .toggle #registerForm {
+  display: none;
 }
 
 body {
