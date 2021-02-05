@@ -89,10 +89,11 @@
 }
 
 .overlay {
-  display: none;
-  align-items: center;
-  justify-content: center;
   position: fixed;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 11px;
   height: 100vh;
   width: 100%;
   z-index: 100;
@@ -184,8 +185,8 @@
 .header #nav2 .searchBox {
   text-align: left;
   text-decoration: none;
-  margin-top: 7px;
-  padding: 6px;
+  margin: 6px;
+  padding: 3px;
   border: solid 1px #423f3f;
   border-radius: 22px;
   background-color: #333333;
@@ -282,6 +283,7 @@
 .form-controler {
   position: relative;
   padding: 5px;
+  margin: 0;
 }
 
 .form-controler input {
@@ -289,7 +291,6 @@
   color: #333333;
   border: solid 1px #333333;
   border-radius: 42px;
-  margin: 0 0 11px;
   padding: 8px;
   outline: none;
   width: 100%;
@@ -311,8 +312,8 @@
 .form-controler i {
   visibility: hidden;
   position: relative;
-  top: 20px;
-  right: -15px;
+  top: -44px;
+  right: -170px;
 }
 
 .form-controler.success i.fa-check-circle {
@@ -320,9 +321,10 @@
   visibility: visible;
 }
 
-.form-controler.Error i.fa-exclamation-circle {
+.form-controler.error i.fa-exclamation-circle {
   color: #e74c3c;
   visibility: visible;
+  right: -154px;
 }
 
 .form-controler small {

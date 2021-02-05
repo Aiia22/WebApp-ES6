@@ -8,10 +8,11 @@
 
 //login toggle display
 .overlay {
-  display: none;
-  align-items: center;
-  justify-content: center;
   position: fixed;
+  display: none;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 11px;
   height: 100vh;
   width: 100%;
   z-index: 100;

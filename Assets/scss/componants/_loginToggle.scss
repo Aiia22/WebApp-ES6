@@ -52,12 +52,12 @@
 .form-controler {
   position: relative;
   padding: 5px;
+  margin: 0;
   input {
     display: block;
     color: #333333;
     border: solid 1px #333333;
     border-radius: 42px;
-    margin: 0 0 11px;
     padding: 8px;
     outline: none;
     width: 100%;
@@ -76,16 +76,17 @@
   i {
     visibility: hidden;
     position: relative;
-    top: 20px;
-    right: -15px;
+    top: -44px;
+    right: -170px;
   }
   &.success i.fa-check-circle {
     color: #2ecc71;
     visibility: visible;
   }
-  &.Error i.fa-exclamation-circle {
+  &.error i.fa-exclamation-circle {
     color: #e74c3c;
     visibility: visible;
+    right: -154px;
   }
   small {
     visibility: hidden;
