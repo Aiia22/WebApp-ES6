@@ -36,20 +36,21 @@
 <div class="overlay">
     <div class="toggle">
         <form role="form" class="user-form"id="registerForm">
-            <h1>Register</h1>
+            <h1 class="header-toggle">Register</h1>
             <div class="form-controler">
-                <input type="text"autocomplete="off" placeholder="Username"seize="33">
+                <input id="usernameR"type="text"autocomplete="off" placeholder="Username"seize="33">
                 <i class="fas fa-check-circle "></i><i class="fas fa-exclamation-circle"></i><small>Error message</small>
             </div>
             <div class="form-controler">
-                <input autocomplete="off" placeholder="Email"seize="33">
+                <input id="emailR"autocomplete="off" placeholder="Email"seize="33">
                 <i class="fas fa-check-circle "></i><i class="fas fa-exclamation-circle"></i><small>Error message</small>
             </div>
             <div class="form-controler">
-                <input autocomplete="off" placeholder="Password" seize="33">
+                <input id="passwordR"autocomplete="off" placeholder="Password" seize="33">
+                <i class="fas fa-check-circle "></i><i class="fas fa-exclamation-circle"></i><small>Error message</small>
             </div>
             <div class="form-controler">
-                <input autocomplete="off" placeholder="Password check" seize="33">
+                <input id="passwordCheckR"autocomplete="off" placeholder="Password check" seize="33">
                 <i class="fas fa-check-circle "></i><i class="fas fa-exclamation-circle"></i><small>Error message</small>
             </div>
             <button class="inputButton">Create</button>
@@ -58,17 +59,18 @@
         
 
         <form role="form" class="user-form" id="loginForm">
-            <h1>Login</h1>
+            <h1 class="header-toggle">Login</h1>
             <div class="form-controler">
-                <input type="text" autocomplete="off" placeholder="Username" seize="33">
+                <input id="usernameL"type="text" autocomplete="off" placeholder="Username" seize="33">
             </div>
             <div class="form-controler">
-                <input autocomplete="off" placeholder="Email" seize="33">
+                <input id="emailL"autocomplete="off" placeholder="Email" seize="33">
             </div>
             <div class="form-controler">
-                <input autocomplete="off" placeholder="Password" seize="33">
+                <input id="passwordL"autocomplete="off" placeholder="Password" seize="33">
             </div>
             <button class="inputButton">Login</button>
+            <a href="#" id="forgotPwd" class="logRegButton">Forgot your Password</a>
             <p>Not a registered? <button class="logRegButton"onclick="userLog(event)">Register</button></p>
         </form>
     </div>

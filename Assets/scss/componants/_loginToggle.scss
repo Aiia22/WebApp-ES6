@@ -1,131 +1,104 @@
 //Userform custom
-.overlay {
-  display: none;
-  position: fixed;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  width: 100%;
-  z-index: 100;
-  &.open {
-    display: flex;
-    animation: show-overlay 0.3s;
+.toggle {
+  padding: 30px 60px;
+  border-radius: 22px;
+  background-color: rgba(51, 51, 51, 0.92);
+  color: #c5c6cb;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  .inputButton {
+    background-color: rgb(90, 88, 88);
+    color: rgb(201, 202, 206);
+    border: none;
+    border-radius: 42px;
+    padding: 11px 55px;
+    margin-top: 15px;
+    outline: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+    &:hover,
+    &:active {
+      background-color: #423f3f;
+      color: #ffffff;
+    }
   }
-  @keyframes show-overlay {
-    0% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  .toggle {
-    padding: 30px 60px;
-    border-radius: 22px;
-    background-color: rgba(51, 51, 51, 0.92);
+  .logRegButton {
+    border: none;
+    background: none;
     color: #c5c6cb;
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    .inputButton {
-      background-color: rgb(90, 88, 88);
-      color: rgb(201, 202, 206);
-      border: none;
-      border-radius: 42px;
-      padding: 11px 55px;
-      margin-top: 15px;
-      outline: none;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: all 200ms ease-in-out;
-      &:hover,
-      &:active {
-        background-color: #423f3f;
-        color: #ffffff;
-      }
-    }
-    .logRegButton {
-      border: none;
-      background: none;
-      color: #c5c6cb;
-      text-decoration: underline;
-      margin-top: 11px;
-      outline: none;
-      &:hover {
-        color: #ffffff;
-      }
-    }
-    p {
-      position: relative;
-      width: 100%;
-      font-size: 17px;
-    }
-    .user-Form {
-      .userFormHeader {
-        border-bottom: 4px solid #c5c6cb;
-        margin: 22px;
-        text-transform: uppercase;
-        h1 {
-          font-size: 33px;
-        }
-      }
-    }
-
-    .form-controler {
-      position: relative;
-      padding: 5px;
-      input {
-        display: block;
-        color: #333333;
-        border: solid 1px #333333;
-        border-radius: 42px;
-        margin: 0 0 11px;
-        padding: 8px;
-        outline: none;
-        width: 100%;
-        transition: all 200ms ease-in-out;
-        &:focus,
-        &:active {
-          border-color: #c5c6cb;
-        }
-      }
-      &.success input {
-        border-color: #2ecc71;
-      }
-      &.error input {
-        border-color: #e74c3c;
-      }
-      i {
-        visibility: hidden;
-        position: relative;
-        top: 20px;
-        right: -15px;
-      }
-      &.success i.fa-check-circle {
-        color: #2ecc71;
-        visibility: visible;
-      }
-      &.Error i.fa-exclamation-circle {
-        color: #e74c3c;
-        visibility: visible;
-      }
-      small {
-        visibility: hidden;
-        position: absolute;
-        top: 45px;
-        left: 15px;
-      }
-      &.error small {
-        color: #e74c3c;
-        visibility: visible;
-      }
-    }
-
-    #registerForm {
-      display: none;
+    text-decoration: underline;
+    margin-top: 11px;
+    outline: none;
+    &:hover {
+      color: #ffffff;
     }
   }
+  p {
+    position: relative;
+    width: 100%;
+    font-size: 17px;
+  }
+  .header-toggle {
+    border-bottom: 4px solid #c5c6cb;
+    margin: 22px;
+    text-transform: uppercase;
+    font-size: 33px;
+    color: #c5c6cb;
+  }
+}
+
+.form-controler {
+  position: relative;
+  padding: 5px;
+  input {
+    display: block;
+    color: #333333;
+    border: solid 1px #333333;
+    border-radius: 42px;
+    margin: 0 0 11px;
+    padding: 8px;
+    outline: none;
+    width: 100%;
+    transition: all 200ms ease-in-out;
+    &:focus,
+    &:active {
+      border-color: #c5c6cb;
+    }
+  }
+  &.success input {
+    border-color: #2ecc71;
+  }
+  &.error input {
+    border-color: #e74c3c;
+  }
+  i {
+    visibility: hidden;
+    position: relative;
+    top: 20px;
+    right: -15px;
+  }
+  &.success i.fa-check-circle {
+    color: #2ecc71;
+    visibility: visible;
+  }
+  &.Error i.fa-exclamation-circle {
+    color: #e74c3c;
+    visibility: visible;
+  }
+  small {
+    visibility: hidden;
+    position: absolute;
+    top: 45px;
+    left: 15px;
+  }
+  &.error small {
+    color: #e74c3c;
+    visibility: visible;
+  }
+}
+
+#registerForm {
+  display: none;
 }

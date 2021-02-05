@@ -1,6 +1,33 @@
+//Nav icons display
 .navIcons {
   transition: all 0.2s ease-in-out;
   &:hover {
     transform: scale(1.2);
+  }
+}
+
+//login toggle display
+.overlay {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  &.open {
+    display: flex;
+    animation: show-overlay 0.3s;
+  }
+  @keyframes show-overlay {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 }
