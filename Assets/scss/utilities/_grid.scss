@@ -65,4 +65,12 @@
     list-style-type: none;
     margin: 0;
   }
+  .art {
+    display: block;
+    margin: auto;
+    width: 50%;
+    &.subArticle {
+      width: 84%;
+    }
+  }
 }
