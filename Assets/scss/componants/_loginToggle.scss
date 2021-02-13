@@ -6,7 +6,7 @@
   color: #c5c6cb;
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 100;
   .inputButton {
     background-color: rgb(90, 88, 88);
     color: rgb(201, 202, 206);
@@ -33,6 +33,7 @@
     outline: none;
     &:hover {
       color: #ffffff;
+      font-weight: 500;
     }
   }
   p {

@@ -6,7 +6,7 @@
   top: 0;
   @include set-background($background-color);
   //background-attachment: fixed;
-  z-index: 1;
+  z-index: 50;
 
   .logo,
   h1 {
@@ -28,6 +28,7 @@
   nav {
     height: 44px;
     overflow: scroll;
+    margin-bottom: 0;
     @include set-background($primary-color);
     ul {
       display: flex;

@@ -1,4 +1,4 @@
-//Nav icons display
+//Nav icons
 .navIcons {
   transition: all 0.2s ease-in-out;
   &:hover {
@@ -6,7 +6,7 @@
   }
 }
 
-//login toggle display
+//Display login toggle
 .overlay {
   position: fixed;
   display: none;
@@ -22,13 +22,55 @@
   }
   @keyframes show-overlay {
     0% {
-      opacity: 0;
-    }
-    50% {
       opacity: 0.5;
     }
     100% {
       opacity: 1;
+    }
+  }
+}
+
+// Display menu
+
+.overlayMenu {
+  position: fixed;
+  display: none;
+  margin: -10% 87%;
+  text-align: left;
+  //transition: all 0.5s ease;
+
+  &.open {
+    display: block;
+    animation: show-overlayMenu 0.5s ease;
+    animation-fill-mode: forwards;
+    margin: -2% 87%;
+  }
+  @keyframes show-overlayMenu {
+    from {
+      opacity: 0;
+      margin: -10% 87%;
+    }
+    to {
+      opacity: 1;
+      z-index: 5;
+      margin: -2% 87%;
+    }
+  }
+  &.close {
+    display: block;
+    animation: hide-overlayMenu 0.5s ease;
+    animation-fill-mode: both;
+    margin: -10% 87%;
+  }
+  @keyframes hide-overlayMenu {
+    from {
+      opacity: 1;
+      z-index: 5;
+      margin: -2% 87%;
+    }
+    to {
+      opacity: 0;
+      margin: -10% 87%;
     }
   }
 }

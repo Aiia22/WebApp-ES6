@@ -10,10 +10,10 @@
     <title>WebApp-ES6</title>
 </head>
 <body>
-  <!--Wrapper-->  
-  <div id="wrapper" class="container-fluid">
-  <!--Header--> 
-  <div class="header flex-container">
+<!--Wrapper-->  
+<div id="wrapper" class="container-fluid">
+<!--Header--> 
+<div class="header flex-container">
      <ul class="logoHeader">
          <li><img class="logo" src="assets/images/logoApp2.png" alt="logo chess & meet" width="111"></li>
          <li><h1>Chess & Meet</h1></li>
@@ -29,6 +29,7 @@
         <li class="nav"><a href="#">Mygame</a></li>
         <li class="nav"><a href="#">News</a></li>
         <li class="nav"><button class="buttonNav"onclick="searchBoxNav(event)"><img class="navIcons"src="assets/images/loupe.svg" alt="home" width="30"></button></li>
+        <li class="nav"><span id="user"></span><i onclick="accessMenu(event)"class="fas fa-caret-down"></i></li>
         <li class="nav"><button class="buttonNav" onclick="logToggle(event)"><img class="navIcons"src="assets/images/user.svg" alt="home" width="30"></button></li>
     </ul>
 
@@ -58,7 +59,7 @@
         </form>
         
 
-        <form role="form" class="user-form" id="loginForm">
+        <form name="LoginForm" class="user-form" id="loginForm" method="#">
             <h1 class="header-toggle">Login</h1>
             <div class="form-controler">
                 <input id="usernameL"type="text" autocomplete="off" placeholder="Username" style="width:300px">
@@ -69,7 +70,7 @@
                 <i class="fas fa-check-circle "></i><i class="fas fa-exclamation-circle"></i><small>Error message</small>
             </div>
             <div class="form-controler">
-                <input id="passwordL"autocomplete="off" placeholder="Password" style="width:300px">
+                <input type="password"id="passwordL"autocomplete="off" placeholder="Password" style="width:300px">
                 <i class="fas fa-check-circle "></i><i class="fas fa-exclamation-circle"></i><small>Error message</small>
             </div>
             <button class="inputButton">Login</button>
@@ -79,6 +80,8 @@
     </div>
 </div>
 </nav>
+
+<!--Search bar-->
 <nav id="nav2">
 <form method="get" action="/search" id="search">
     <img id="SearchIcon"src="assets/images/loupe.svg" alt="Search Icon"width="15"/>
@@ -86,9 +89,18 @@
     <button class="buttonNav"onclick="searchBoxNav(event)"><img class="navIcons"onclick="document.querySelector('.searchBox').value=''"src="Assets/images/close.svg" alt="close box" width="10"/></button>
 </form>
 </nav>
-    
-    </div>
-  
+</div>
+
+<!--User menu-->
+<div class="overlayMenu">
+    <ul class="menu">
+        <li class="userMenu"><a class="userMenu" href="#">Profile</a></li>
+        <li class="userMenu"><a class="userMenu" href="#">Settings</a></li>
+        <li class="userMenu"><button onclick="logOut(event)" id="logOutButton">Sign out</button></li>
+    </ul>
+</div>
+
+
   <!--Main-->
   <div class="grid-container">
       <div class="box item1">  
