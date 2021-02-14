@@ -1,15 +1,17 @@
-//Variables
-$font-stack: Arial, Helvetica, Sans-serif;
-$primary-color: #ffffff;
+// variables
+
+$font-stack: Arial, Helvetica, sans-serif;
 $secondary-color: #c5c6cb;
+$primary-color: #ffffff;
 $tiertary-color: #fbfbfd;
 $box-color: #333333;
 $background-color: #423f3f;
 
-//Set text color based on bg
+// set text color based on bg
+
 @function set-text-color($color) {
   @if (lightness($color) > 70) {
-    @return $primary-color;
+    @return $box-color;
   } @else {
     @return $secondary-color;
   }

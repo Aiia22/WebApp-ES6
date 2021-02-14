@@ -1,0 +1,67 @@
+{
+  "users": [
+    {
+      "name": "Marie",
+      "email": "marie@azer.com",
+      "password": "azerty",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "name": "John",
+      "email": "john@qsdf.com",
+      "password": "qsdfgh",
+      "level": "master",
+      "tier": "free"
+    },
+    {
+      "name": "Tatiana",
+      "email": "tatiana@wxc.com",
+      "password": "wxcvb",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "name": "Tatiana",
+      "email": "tatiana@wxc.com",
+      "password": "wxcvb",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "name": "Tatiana",
+      "email": "tatiana@wxc.com",
+      "password": "wxcvb",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "name": "Tatiana",
+      "email": "tatiana@wxc.com",
+      "password": "wxcvb",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "name": "Tatiana",
+      "email": "tatiana@wxc.com",
+      "password": "wxcvb",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "name": "Tatiana",
+      "email": "tatiana@wxc.com",
+      "password": "wxcvb",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "name": "Tatiana",
+      "email": "tatiana@wxc.com",
+      "password": "wxcvb",
+      "level": "novice",
+      "tier": "free"
+    }
+  ]
+}

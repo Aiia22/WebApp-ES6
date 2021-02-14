@@ -6,3 +6,9 @@
 @import "componants/button";
 @import "componants/loginToggle";
 @import "componants/userMenu";
+
+body {
+  font-family: $font-stack;
+  line-height: 1.6;
+  @include set-background($background-color);
+}
