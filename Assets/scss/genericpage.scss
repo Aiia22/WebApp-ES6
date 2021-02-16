@@ -1,14 +1,27 @@
 @import "utilities/config2";
 @import "utilities/grid";
+@import "utilities/grid2";
 @import "utilities/animations";
 
 @import "componants/header";
 @import "componants/button";
 @import "componants/loginToggle";
 @import "componants/userMenu";
+@import "componants/chessBoard";
 
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
   font-family: $font-stack;
   line-height: 1.6;
   @include set-background($background-color);
+}
+#wrapper {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  z-index: 0;
 }

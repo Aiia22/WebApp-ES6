@@ -3,8 +3,15 @@
   height: 100vh;
   grid-template-columns: 1fr 1fr;
   gap: 22px;
-  margin-top: 180px;
   padding: 0 40px;
+}
+
+.grid-container.homepage {
+  margin-top: 180px;
+}
+
+.grid-container.genericpage {
+  margin-top: 70px;
 }
 
 .box {
@@ -101,6 +108,11 @@
 
 .box.footer:hover a {
   color: #2bb2bb;
+}
+
+div {
+  margin: 0;
+  padding: 0;
 }
 
 .navIcons {
@@ -234,8 +246,7 @@
   height: 44px;
   overflow: scroll;
   margin-bottom: 0;
-  background-color: #ffffff;
-  color: #333333;
+  background-color: #333333;
 }
 
 .header nav ul {
@@ -248,8 +259,7 @@
 }
 
 .header nav a {
-  background-color: #ffffff;
-  color: #333333;
+  color: #c5c6cb;
   display: block;
   text-decoration: none;
   font-size: 17px;
@@ -259,7 +269,7 @@
 }
 
 .header nav a:hover {
-  color: #423f3f;
+  color: #ffffffff;
 }
 
 .header #nav2 {
@@ -280,7 +290,70 @@
   cursor: pointer;
 }
 
-.btn-article1 {
+.header2 {
+  text-align: center;
+  background: fixed;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #333333;
+  color: #c5c6cb;
+  z-index: 50;
+}
+
+.header2 img {
+  vertical-align: middle;
+}
+
+.header2 nav {
+  height: 44px;
+  overflow: scroll;
+  margin-bottom: 0;
+  background-color: #333333;
+}
+
+.header2 nav ul {
+  display: flex;
+  height: 44px;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+}
+
+.header2 nav a {
+  color: #c5c6cb;
+  display: block;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 100;
+  cursor: pointer;
+  transition: ease-in-out 0.3s;
+}
+
+.header2 nav a:hover {
+  color: #ffffffff;
+}
+
+.header2 #nav2 {
+  display: none;
+}
+
+.header2 #nav2 .searchBox {
+  text-align: left;
+  text-decoration: none;
+  margin: 6px;
+  padding: 3px;
+  border: solid 1px #fbfbfd;
+  border-radius: 22px;
+  background-color: #ffffff;
+  color: #c5c6cb;
+  outline: none;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.btn-article1, .btn-article2 {
   display: flex;
   padding: 11px 22px;
   margin: 15px auto;
@@ -292,7 +365,7 @@
   font-size: 15px;
 }
 
-.btn-article1:hover {
+.btn-article1:hover, .btn-article2:hover {
   filter: invert(1);
   transform: scale(1.1);
 }
@@ -300,6 +373,12 @@
 .btn-article1 {
   background-color: #cdced2;
   color: #333333;
+  margin-bottom: 22px;
+}
+
+.btn-article2 {
+  background-color: #4a4646;
+  color: #c5c6cb;
   margin-bottom: 22px;
 }
 
@@ -459,9 +538,42 @@ i.fa-caret-down.visible {
   color: #ffffff;
 }
 
+table tr td {
+  width: 100px;
+  height: 100px;
+  border: solid #000 1px;
+}
+
+table tr:nth-child(odd) td:nth-child(even) {
+  background: #000;
+}
+
+table tr:nth-child(even) td:nth-child(odd) {
+  background: #000;
+}
+
+.chessBoard {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
   background-color: #423f3f;
   color: #c5c6cb;
+}
+
+#wrapper {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  z-index: 0;
 }

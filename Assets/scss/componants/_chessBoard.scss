@@ -1,0 +1,17 @@
+table tr td {
+  width: 100px;
+  height: 100px;
+  border: solid #000 1px;
+}
+
+table tr:nth-child(odd) td:nth-child(even) {
+  background: #000;
+}
+table tr:nth-child(even) td:nth-child(odd) {
+  background: #000;
+}
+.chessBoard {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+}

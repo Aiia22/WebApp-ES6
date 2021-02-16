@@ -6,7 +6,20 @@
 @import "componants/button";
 @import "componants/loginToggle";
 @import "componants/userMenu";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: $font-stack;
   @include set-background($background-color);
+}
+#wrapper {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  z-index: 0;
 }

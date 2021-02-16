@@ -235,7 +235,6 @@
   overflow: scroll;
   margin-bottom: 0;
   background-color: #333333;
-  color: #c5c6cb;
 }
 
 .header nav ul {
@@ -248,7 +247,6 @@
 }
 
 .header nav a {
-  background-color: #333333;
   color: #c5c6cb;
   display: block;
   text-decoration: none;
@@ -259,7 +257,7 @@
 }
 
 .header nav a:hover {
-  color: #ffffff;
+  color: #ffffffff;
 }
 
 .header #nav2 {

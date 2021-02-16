@@ -29,7 +29,7 @@
     height: 44px;
     overflow: scroll;
     margin-bottom: 0;
-    @include set-background($primary-color);
+    background-color: #333333;
     ul {
       display: flex;
       height: 44px;
@@ -39,7 +39,7 @@
       margin: 0;
     }
     a {
-      @include set-background($primary-color);
+      color: #c5c6cb;
       display: block;
       text-decoration: none;
       font-size: 17px;
@@ -47,7 +47,63 @@
       cursor: pointer;
       transition: ease-in-out 0.3s;
       &:hover {
-        color: $background-color;
+        color: #ffffffff;
+      }
+    }
+  }
+  #nav2 {
+    display: none;
+    .searchBox {
+      text-align: left;
+      text-decoration: none;
+      margin: 6px;
+      padding: 3px;
+      border: solid 1px $tiertary-color;
+      border-radius: 22px;
+      background-color: $primary-color;
+      color: $secondary-color;
+      outline: none;
+      transition: 200ms ease-in-out;
+      cursor: pointer;
+    }
+  }
+}
+
+.header2 {
+  text-align: center;
+  background: fixed;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  @include set-background($box-color);
+  //background-attachment: fixed;
+  z-index: 50;
+  img {
+    vertical-align: middle;
+  }
+  nav {
+    height: 44px;
+    overflow: scroll;
+    margin-bottom: 0;
+    background-color: #333333;
+    ul {
+      display: flex;
+      height: 44px;
+      justify-content: space-around;
+      align-items: center;
+      list-style-type: none;
+      margin: 0;
+    }
+    a {
+      color: #c5c6cb;
+      display: block;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: 100;
+      cursor: pointer;
+      transition: ease-in-out 0.3s;
+      &:hover {
+        color: #ffffffff;
       }
     }
   }
