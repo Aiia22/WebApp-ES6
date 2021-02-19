@@ -49,7 +49,7 @@
             <li class="nav"><a href="middleGame.html">Middlegames</a></li>
             <li class="nav"><a href="endGame.html">Endgames</a></li>
             <li class="nav"><a href="myGame.html">Mygame</a></li>
-            <li class="nav"><a href="news.html">News</a></li>
+            <li class="nav"><a href="chat.html">Mychat</a></li>
             <li class="nav">
               <button class="buttonNav" onclick="searchBoxNav(event)">
                 <img
@@ -131,7 +131,9 @@
                 <button class="inputButton">Create</button>
                 <p>
                   Already registered?
-                  <button class="logRegButton">Login</button>
+                  <button class="logRegButton" onclick=" userLogReg(event)">
+                    Login
+                  </button>
                 </p>
               </form>
 
@@ -177,15 +179,15 @@
                   ><i class="fas fa-exclamation-circle"></i
                   ><small>Error message</small>
                 </div>
-                <button class="inputButton" onclick="userLog(event)">
-                  Login
-                </button>
+                <button class="inputButton">Login</button>
                 <a href="#" id="forgotPwd" class="logRegButton"
                   >Forgot your Password</a
                 >
                 <p>
                   Not a registered?
-                  <button class="logRegButton">Register</button>
+                  <button class="logRegButton" onclick=" userLogReg(event)">
+                    Register
+                  </button>
                 </p>
               </form>
             </div>

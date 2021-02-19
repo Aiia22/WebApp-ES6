@@ -32,7 +32,7 @@ function logToggle(event) {
   document.querySelector(".overlay").classList.toggle("open");
 }
 
-function userLog(event) {
+function userLogReg(event) {
   event.preventDefault();
   let showRegisterToggle = register.style.display;
   let showLoginToggle = login.style.display;
@@ -160,8 +160,31 @@ function postFetchForSignUp() {
 }
 
 // Log toggle --> login
-function userLog(event) {
-  let form = loginForm.getElementById("loginForm");
+login.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validateForm();
+});
+
+function validateForm() {
+  const emailLValue = emailL.value.trim();
+  const passwordLValue = passwordL.value.trim();
+  const userData = JSON.parse(window.localStorage.getItem("userDataSignUp"));
+  console.log(userData);
+  const email = userData.email.trim();
+  const username = userData.username.trim();
+  console.log(username);
+  const password = userData.password.trim();
+
+  if (emailLValue === email && passwordLValue === password) {
+    userLogin();
+  } else {
+    alert("Login was unsuccessful, please check your email or password");
+    return false;
+  }
+}
+
+function userLogin(event) {
+  let form = document.getElementById("loginForm");
   let usernameInput = document.querySelector("#username");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -212,25 +235,5 @@ function logOut() {
   DisplayUsername(document.getElementById("usernameR").value);
 } */
 
-/* login.addEventListener("submit", (e) => {
-  e.preventDefault();
-  validateForm();
-});
-
-function validateForm() {
-  const emailLValue = emailL.value.trim();
-  const passwordLValue = passwordL.value.trim();
-  const userData = JSON.parse(window.localStorage.getItem("userDataSignUp"));
-  console.log(userData);
-  const email = userData.email.trim();
-  const username = userData.username.trim();
-  console.log(username);
-  const password = userData.password.trim();
-
-  if (emailLValue === email && passwordLValue === password) {
-    DisplayUsername(username);
-  } else {
-    alert("Login was unsuccessful, please check your email or password");
-    return false;
-  }
-} */
+//Chessboard:
+var board1 = Chessboard("board1", "start");
