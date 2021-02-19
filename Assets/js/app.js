@@ -32,7 +32,7 @@ function logToggle(event) {
   document.querySelector(".overlay").classList.toggle("open");
 }
 
-function userLogReg(event) {
+function userLog(event) {
   event.preventDefault();
   let showRegisterToggle = register.style.display;
   let showLoginToggle = login.style.display;
@@ -160,31 +160,8 @@ function postFetchForSignUp() {
 }
 
 // Log toggle --> login
-login.addEventListener("submit", (e) => {
-  e.preventDefault();
-  validateForm();
-});
-
-function validateForm() {
-  const emailLValue = emailL.value.trim();
-  const passwordLValue = passwordL.value.trim();
-  const userData = JSON.parse(window.localStorage.getItem("userDataSignUp"));
-  console.log(userData);
-  const email = userData.email.trim();
-  const username = userData.username.trim();
-  console.log(username);
-  const password = userData.password.trim();
-
-  if (emailLValue === email && passwordLValue === password) {
-    userLogin();
-  } else {
-    alert("Login was unsuccessful, please check your email or password");
-    return false;
-  }
-}
-
-function userLogin(event) {
-  let form = document.getElementById("loginForm");
+function userLog(event) {
+  let form = loginForm.getElementById("loginForm");
   let usernameInput = document.querySelector("#username");
   form.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -235,5 +212,25 @@ function logOut() {
   DisplayUsername(document.getElementById("usernameR").value);
 } */
 
-//Chessboard:
-var board1 = Chessboard("board1", "start");
+/* login.addEventListener("submit", (e) => {
+  e.preventDefault();
+  validateForm();
+});
+
+function validateForm() {
+  const emailLValue = emailL.value.trim();
+  const passwordLValue = passwordL.value.trim();
+  const userData = JSON.parse(window.localStorage.getItem("userDataSignUp"));
+  console.log(userData);
+  const email = userData.email.trim();
+  const username = userData.username.trim();
+  console.log(username);
+  const password = userData.password.trim();
+
+  if (emailLValue === email && passwordLValue === password) {
+    DisplayUsername(username);
+  } else {
+    alert("Login was unsuccessful, please check your email or password");
+    return false;
+  }
+} */

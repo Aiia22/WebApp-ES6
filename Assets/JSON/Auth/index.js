@@ -56,22 +56,17 @@ app.post("/register", (req, res) => {
 
 //Get ---->
 app.get("/:userId", (req, res) => {
-  if (req.cookie.userId) {
-    return res.end(`Welcome back, ${req.cookie.userId}!`);
+  const userId = req.params.userId;
+
+  if (!userId) {
+    return res.status(400).send("invalid userId");
   }
-
-  const userId = uuidv4();
-
-  res.cookie("id", userId, { httpOnly: true });
-  res.end(`Welcome, ${userId}!`);
+  return res.status(202).send("Received a GET HTTP method");
 });
 
 //Put ---->
 app.put("/:userId/update", (req, res) => {
-  const rawData = fs.readFileSync("userData.json");
-  const users = JSON.parse(rawData).users;
-
-  const userId = users.find((u) => u.userId);
+  const userId = req.params.userId;
   if (!userId) {
     return res.status(400).send("invalid userId");
   }
@@ -80,10 +75,6 @@ app.put("/:userId/update", (req, res) => {
 
 app.delete("/delete", (req, res) => {
   const userId = req.params.userId;
-  const rawData = fs.readFileSync("userData.json");
-  const users = JSON.parse(rawData).users;
-
-  const user = users.find((u) => u.userId);
   if (!userId) {
     return res.status(400).send("invalid userId");
   }
