@@ -56,28 +56,38 @@ app.post("/register", (req, res) => {
 
 //Get ---->
 app.get("/:userId", (req, res) => {
-  if (req.cookie.userId) {
-    return res.end(`Welcome back, ${req.cookie.userId}!`);
-  }
-
-  const userId = uuidv4();
-
-  res.cookie("id", userId, { httpOnly: true });
-  res.end(`Welcome, ${userId}!`);
-});
-
-//Put ---->
-app.put("/:userId/update", (req, res) => {
   const rawData = fs.readFileSync("userData.json");
   const users = JSON.parse(rawData).users;
 
-  const userId = users.find((u) => u.userId);
-  if (!userId) {
+  const user = users.find((u) => u.userId === req.params.userId);
+  if (!user) {
     return res.status(400).send("invalid userId");
   }
-  return res.send(`PUT HTTP method on user/${req.params.userId} resource`);
+  return res.send(user);
 });
 
+//Put ---->
+app.put("/:userId", (req, res) => {
+  const rawData = fs.readFileSync("userData.json");
+  const data = JSON.parse(rawData);
+
+  const user = data.users.find((u) => u.userId === req.params.userId);
+  if (!user) {
+    return res.status(400).send("invalid userId");
+  }
+
+  user.name = req.body.name;
+  user.email = req.body.email;
+  user.password = req.body.password;
+  user.level = req.body.level;
+  user.tier = req.body.tier;
+  user.password = req.body.password;
+
+  fs.writeFileSync("userData.json", JSON.stringify(data));
+  return res.status(202).send(user);
+});
+
+//Delete ------->
 app.delete("/delete", (req, res) => {
   const userId = req.params.userId;
   const rawData = fs.readFileSync("userData.json");
