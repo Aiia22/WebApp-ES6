@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="assets/css/genericpage.css" />
+   <link rel="stylesheet"
+      href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
+      integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
+      crossorigin="anonymous">
     <script
       src="https://kit.fontawesome.com/8995d23b9c.js"
       crossorigin="anonymous"
@@ -15,7 +19,6 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-
     <title>WebApp-ES6</title>
   </head>
 
@@ -228,115 +231,42 @@
       </div>
 
       <!--Main-->
-      <div class= "grid-container graphAssesment ">
-          
-          <div class="boxB">
+      <div class="myGame">
+<div class= "grid-container graphAssesment ">
+         <div class="item-a"id="verticle-line"></div>
+          <div class="item-b">
             <h3>It's been over 30 days since your game</h3>
             <h4><a href="#">Play now to evalute your level</a></h4>
           </div>
-      
-            <div class="boxC">
-              <ul class="expert">
-                <li>Expert</li>
-                <li class="range">100-150</li>
-                <li>intermediate</li>
-                <li class="range">50-100</li>
-                <li>Novice</li>
-                <li class="range">0-50</li>
-                </ul>
-            </div>
-           
-            <div class="boxD">
+            <div class="item-c">
+              <dl class="expert">
+                <dt>Expert</dt>
+                <dd class="range">100-150</dd>
+                <dt>intermediate</dt>
+                <dd class="range">50-100</dd>
+                <dt>Novice</dt>
+                <dd class="range">0-50</dd>
+              </dl>
+               
+              </div>
+            
+            <div class="item-d">
                 <span class="scoreHeader">Score</span>
                 <span class="result">136</span>
               <img src="#" alt="#"width="30">
             </div>
       </div>
-<div class="chessBoard">
-<table>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-        <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
-</div>
+       <div class="item-e"><hr></div>
       
+
+<div class="chessboard">
+<div id="board2" style="width: 400px"></div>
+<button id="startBtn">Start Position</button>
+<button id="clearBtn">Clear Board</button>
+</div>
+      </div>
+      
+
         
         <!--Footer-->
         <div class="grid-container genericpage"></div>
@@ -406,6 +336,23 @@
     </div>
     <!--Script-->
     <script src="Assets/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"
+        integrity="sha384-8Vi8VHwn3vjQ9eUHUxex3JSN/NFqUg3QbPyX8kWyb93+8AC/pPWTzj+nHtbC5bxD"
+        crossorigin="anonymous"></script>
+
+        <script> var board2 = Chessboard('board2', {
+  draggable: true,
+  dropOffBoard: 'trash',
+  sparePieces: true
+})
+
+$('#startBtn').on('click', board2.start)
+$('#clearBtn').on('click', board2.clear)
+        </script>
   </body>
   <!--Image by Denny Franzkowiak/mohamed ramzee  Pixabay-->
 </html>

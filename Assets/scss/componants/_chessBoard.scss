@@ -1,17 +1,91 @@
-table tr td {
-  width: 100px;
-  height: 100px;
-  border: solid #000 1px;
+.myGame {
+  margin-top: 80px;
 }
 
-table tr:nth-child(odd) td:nth-child(even) {
-  background: #000;
+.grid-container {
+  &.graphAssesment {
+    height: 70%;
+    display: grid;
+    grid-template-columns: 11% 1px auto 1px 0px;
+    grid-template-rows: 80px auto 80px;
+    background-color: #c5c6cb;
+
+    .item {
+      margin: 0;
+      padding: 0;
+    }
+    .item-a {
+      grid-column-start: 2;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 4;
+      background-color: black;
+    }
+    .item-b {
+      grid-column-start: 1;
+      grid-column-end: 4;
+      grid-row-start: 1;
+      grid-row-end: 1;
+      justify-self: center;
+      //background-color: #ffffff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+
+      h3 {
+        color: #333333;
+        justify-self: center;
+        font-size: 44px;
+      }
+      a {
+        text-decoration: none;
+        color: #333333;
+        justify-self: center;
+        font-size: 33px;
+      }
+    }
+    .item-c {
+      grid-column-start: 1;
+      grid-column-end: 1;
+      grid-row-start: 1;
+      grid-row-end: 4;
+      //background-color: #ffffff;
+      text-align: right;
+      align-self: end;
+      justify-items: stretch;
+      margin: 0;
+      padding: 0;
+      font-size: 11px;
+    }
+    .item-d {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 2;
+      grid-row-end: 2;
+      align-self: center;
+      //background-color: #ffffff;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      font-weight: bold;
+      color: #333333;
+    }
+    margin: 0;
+    padding: 0;
+  }
+  .item-e {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    height: 1px;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    background-color: #333333;
+    hr {
+      font-weight: bold;
+    }
+  }
 }
-table tr:nth-child(even) td:nth-child(odd) {
-  background: #000;
-}
-.chessBoard {
+.chessboard {
   display: block;
   margin: 0 auto;
-  padding: 0;
 }
