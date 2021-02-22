@@ -50,7 +50,7 @@ function userLogReg(event) {
 function accessMenu(event) {
   event.preventDefault();
   if (document.querySelector(".overlayMenu").className === "overlayMenu") {
-    document.querySelector(".overlayMenu").classList.add("open");
+    document.querySelector(".overlayMenu").classList.toggle("open");
   } else if (
     document.querySelector(".overlayMenu").className === "overlayMenu close"
   ) {
@@ -134,15 +134,10 @@ function submitInputsSignUp() {
 }
 
 function postFetchForSignUp() {
-  let usernameL = document.getElementById("usernameL");
-  let emailL = document.getElementById("emailL");
-  let passwordL = document.getElementById("passwordL");
-
   fetch("http://localhost:3000/register", {
     method: "POST",
     headers: {
-      "Content-Type": "Assets/JSON/Auth/userData.json",
-      Accept: "Assets/JSON/Auth/userData.json",
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       name: usernameL.value,
@@ -151,21 +146,97 @@ function postFetchForSignUp() {
     }),
   })
     .then((res) => res.json())
-    .then((users) => {
+    .then((user) => {
       localStorage.clear(); // If user signed in => clear it up
 
-      localStorage.userId = users.userId; // Then store the id
-      DisplayUsername();
+      localStorage.user = user; // Then store the user
+      displayUserSetUp(user);
     });
 }
 
 // Log toggle --> login
-login.addEventListener("submit", (e) => {
-  e.preventDefault();
-  validateForm();
-});
+function userLogin() {
+  login.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetch("http://localhost:3000/connect", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: emailL.value,
+        password: passwordL.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((user) => {
+        fetch("http://localhost:3000/" + user.userId, {
+          method: "GET",
+        })
+          .then((res) => res.json())
+          .then((user) => {
+            localStorage.clear(); // If user signed in => clear it up
+            localStorage.user = user; // Then store the user
+            console.log(user);
+            valideUser(user);
+          });
+      });
+  });
+}
 
-function validateForm() {
+function valideUser(user) {
+  console.log(user, "valideUser avant");
+  if (user) {
+    document.querySelector(".overlay").classList.remove("open");
+    displayUserSetUp(user);
+  } else if (res === "Invalid username or password...") {
+    alert("Login was unsuccessful, please check your email or password"); //***** issue!!!!!!
+  }
+  console.log(user, "valideUser après");
+}
+
+// Log toggle --> login/register (common functions)
+function displayUserSetUp(user) {
+  let username = user.name;
+  let level = user.level;
+  let tier = user.tier;
+  console.log(username, "display username");
+  if (username !== "undefined" || username !== "null") {
+    document.getElementById("userN").innerHTML = username;
+    //login.reset();
+  } else {
+    document.getElementById("userN").innerHTML = "Hello!";
+    console.log("azert");
+  }
+  document.querySelector(".fa-caret-down").classList.add("visible");
+
+  console.log(username, "display username");
+}
+
+//Login out
+function logOut() {
+  document.getElementById("userN").innerHTML = "";
+  document.querySelector(".fa-caret-down").classList.remove("visible");
+  document.querySelector(".overlayMenu").classList.replace("open", "close");
+  localStorage.clear();
+  console.log("logout");
+}
+
+//// alternative storage:
+
+/* function storeInputsSignUp() {
+  let userDataSignUp = {
+    username: document.getElementById("usernameR").value,
+    email: document.getElementById("emailR").value,
+    password: document.getElementById("passwordR").value,
+  };
+  localStorage.setItem("userDataSignUp", JSON.stringify(userDataSignUp));
+  DisplayUsername(document.getElementById("usernameR").value);
+} */
+
+// Log toggle --> login
+/* function validateForm(event) {
+  event.preventDefault();
   const emailLValue = emailL.value.trim();
   const passwordLValue = passwordL.value.trim();
   const userData = JSON.parse(window.localStorage.getItem("userDataSignUp"));
@@ -181,56 +252,4 @@ function validateForm() {
     alert("Login was unsuccessful, please check your email or password");
     return false;
   }
-}
-
-function userLogin(event) {
-  let form = document.getElementById("loginForm");
-  let usernameInput = document.querySelector("#username");
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    fetch("http://localhost:3000/connect") //  get fetch    // request where users are stored
-      .then((res) => res.json())
-      .then((usersArray) => {
-        let user = usersArray.find(function (user) {
-          return user.username === usernameInput.value; // check if there is a user with a value given
-        });
-        if (user) {
-          signDiv.innerHTML = "";
-          localStorage.id = user.id; // If there is so,  store it
-          DisplayUsername();
-        }
-      });
-  });
-}
-
-// Log toggle --> login/register (common functions)
-function DisplayUsername(username) {
-  const name = username;
-  if (name !== "undefined" || name !== "null") {
-    document.getElementById("user").innerHTML = name;
-  } else {
-    document.getElementById("user").innerHTML = "Hello!";
-    console.log("azert");
-  }
-  document.querySelector(".fa-caret-down").classList.add("visible");
-  document.querySelector(".overlay").classList.remove("open");
-}
-
-function logOut() {
-  document.getElementById("user").innerHTML = "";
-  document.querySelector(".fa-caret-down").classList.remove("visible");
-  document.querySelector(".overlayMenu").classList.replace("open", "close");
-  localStorage.clear();
-}
-
-//// alternative storage:
-
-/* function storeInputsSignUp() {
-  let userDataSignUp = {
-    username: document.getElementById("usernameR").value,
-    email: document.getElementById("emailR").value,
-    password: document.getElementById("passwordR").value,
-  };
-  localStorage.setItem("userDataSignUp", JSON.stringify(userDataSignUp));
-  DisplayUsername(document.getElementById("usernameR").value);
 } */

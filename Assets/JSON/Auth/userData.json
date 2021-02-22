@@ -1,1 +1,36 @@
-{"users":[{"name":"melanie","email":"melanie@wxc.com","password":"wxcvb","level":"novice","tier":"free"},{"name":"Tatiana","email":"tatiana@wxc.com","password":"wxcvb","level":"novice","tier":"free"},{"userId":"12f1111a-42e3-45da-9b17-b5f57ee6ab4a","name":"Tatiana","email":"tatiana@wxc.com","password":"wxcvb","level":"novice","tier":"free"},{"userId":"240f33fb-1639-412a-8b04-367a10115bcc","name":"John","email":"john@qsdf.com","password":"qsdfgh","level":"novice","tier":"free"},{"userId":"ef68b3cc-d9c0-45f6-a6dd-cf6b58c76bdd","name":"Marie","email":"marie@azer.com","password":"azerty","level":"master","tier":"premium"},{"userId":"08950112-7bdc-40f7-a37f-ebf0fe1b3e3e","name":"Pauline","email":"pauline@poi.com","password":"poiuyt","level":"novice","tier":"free"},{"userId":"502db84a-4e43-4c5d-9267-bb1db0b60e37","name":"Pauline","email":"pauline@poi.com","password":"poiuyt","level":"novice","tier":"free"}]}
+{
+  "users": [
+    {
+      "userId": "12f1111a-42e3-45da-9b17-b5f57ee6ab4a",
+      "name": "Tatiana",
+      "email": "tatiana@azer.com",
+      "password": "12345",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "userId": "240f33fb-1639-412a-8b04-367a10115bcc",
+      "name": "John",
+      "email": "john@qsdf.com",
+      "password": "qsdfgh",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "userId": "08950112-7bdc-40f7-a37f-ebf0fe1b3e3e",
+      "name": "Pauline",
+      "email": "pauline@poi.com",
+      "password": "poiuyt",
+      "level": "novice",
+      "tier": "free"
+    },
+    {
+      "userId": "502db84a-4e43-4c5d-9267-bb1db0b60e37",
+      "name": "Pauline",
+      "email": "pauline@poi.com",
+      "password": "poiuyt",
+      "level": "novice",
+      "tier": "free"
+    }
+  ]
+}

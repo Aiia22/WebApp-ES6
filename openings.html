@@ -51,9 +51,9 @@
                 />
               </button>
             </li>
-            <li class="nav">
-              <span id="user"></span
-              ><i onclick="accessMenu(event)" class="fas fa-caret-down"></i>
+            <li id="user" class="nav">
+              <span id="userN"></span
+              ><i class="fas fa-caret-down" onclick="accessMenu(event)"></i>
             </li>
             <li class="nav">
               <button class="buttonNav" onclick="logToggle(event)">
@@ -119,10 +119,10 @@
                   ><i class="fas fa-exclamation-circle"></i
                   ><small>Error message</small>
                 </div>
-                <button class="inputButton">Create</button>
+                <button class="inputButton" value="submit">Create</button>
                 <p>
                   Already registered?
-                  <button class="logRegButton" onclick="userLog(event)">
+                  <button class="logRegButton" onclick="userLogReg(event)">
                     Login
                   </button>
                 </p>
@@ -170,13 +170,19 @@
                   ><i class="fas fa-exclamation-circle"></i
                   ><small>Error message</small>
                 </div>
-                <button class="inputButton">Login</button>
+                <button
+                  class="inputButton"
+                  value="submit"
+                  onclick="userLogin(event)"
+                >
+                  Login
+                </button>
                 <a href="#" id="forgotPwd" class="logRegButton"
                   >Forgot your Password</a
                 >
                 <p>
                   Not a registered?
-                  <button class="logRegButton" onclick="userLog(event)">
+                  <button class="logRegButton" onclick="userLogReg(event)">
                     Register
                   </button>
                 </p>
@@ -224,7 +230,6 @@
           </li>
         </ul>
       </div>
-
       <!--Main-->
       <div class="grid-container genericpage">
         <div class="box item3 animArticle">

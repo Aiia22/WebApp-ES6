@@ -1,8 +1,13 @@
 i.fa-caret-down {
   display: none;
+
   &.visible {
     display: block;
   }
+}
+
+#userN {
+  color: #c5c6cb;
 }
 
 .menu {

@@ -516,6 +516,10 @@ i.fa-caret-down.visible {
   display: block;
 }
 
+#userN {
+  color: #c5c6cb;
+}
+
 .menu {
   position: relative;
   padding: 11px 22px;

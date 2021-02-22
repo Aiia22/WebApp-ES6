@@ -40,7 +40,7 @@
             <li class="nav"><a href="middleGame.html">Middlegames</a></li>
             <li class="nav"><a href="endGame.html">Endgames</a></li>
             <li class="nav"><a href="myGame.html">Mygame</a></li>
-            <li class="nav active"><a href="news.html">News</a></li>
+            <li class="nav active"><a href="myChat.html">Mychat</a></li>
             <li class="nav">
               <button class="buttonNav" onclick="searchBoxNav(event)">
                 <img
@@ -51,8 +51,8 @@
                 />
               </button>
             </li>
-            <li class="nav">
-              <span id="user"></span
+            <li id="user" class="nav">
+              <span id="userN"></span
               ><i onclick="accessMenu(event)" class="fas fa-caret-down"></i>
             </li>
             <li class="nav">
@@ -122,7 +122,7 @@
                 <button class="inputButton">Create</button>
                 <p>
                   Already registered?
-                  <button class="logRegButton" onclick="userLog(event)">
+                  <button class="logRegButton" onclick="userLogReg(event)">
                     Login
                   </button>
                 </p>
@@ -170,13 +170,15 @@
                   ><i class="fas fa-exclamation-circle"></i
                   ><small>Error message</small>
                 </div>
-                <button class="inputButton">Login</button>
+                <button class="inputButton" onclick="userLogin(event)">
+                  Login
+                </button>
                 <a href="#" id="forgotPwd" class="logRegButton"
                   >Forgot your Password</a
                 >
                 <p>
                   Not a registered?
-                  <button class="logRegButton" onclick="userLog(event)">
+                  <button class="logRegButton" onclick="userLogReg(event)">
                     Register
                   </button>
                 </p>

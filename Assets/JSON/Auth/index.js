@@ -1,5 +1,8 @@
+const cors = require("cors");
 const express = require("express");
 const app = express();
+app.use(cors());
+app.options("*", cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const fs = require("fs");
@@ -18,7 +21,9 @@ app.post("/connect", (req, res) => {
   const user = users.find((u) => u.email === email && u.password === password);
 
   if (user) {
-    return res.send({ name: user.name, level: user.level, tier: user.tier });
+    return res.send({
+      userId: user.userId,
+    });
   }
   return res.send("Invalid username or password...");
 });
@@ -88,15 +93,16 @@ app.put("/:userId", (req, res) => {
 });
 
 //Delete ------->
-app.delete("/delete", (req, res) => {
-  const userId = req.params.userId;
+app.delete("/:userId", (req, res) => {
   const rawData = fs.readFileSync("userData.json");
-  const users = JSON.parse(rawData).users;
+  const data = JSON.parse(rawData);
 
-  const user = users.find((u) => u.userId);
-  if (!userId) {
+  const user = data.users.findIndex((u) => u.userId === req.params.userId);
+  if (user === -1) {
     return res.status(400).send("invalid userId");
   }
+  data.users.splice(user, 1);
+  fs.writeFileSync("userData.json", JSON.stringify(data));
   return res.send(`DELETE HTTP method on user/${req.params.userId} resource`);
 });
 
