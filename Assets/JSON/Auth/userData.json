@@ -31,6 +31,14 @@
       "password": "poiuyt",
       "level": "novice",
       "tier": "free"
+    },
+    {
+      "userId": "1e554499-40ce-40e8-a130-30262e8b8763",
+      "name": "Betty ",
+      "email": "betty@azer.com",
+      "password": "4444",
+      "level": "novice",
+      "tier": "free"
     }
   ]
 }

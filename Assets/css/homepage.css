@@ -509,6 +509,7 @@ i.fa-caret-down {
 
 i.fa-caret-down.visible {
   display: block;
+  color: #c5c6cb;
 }
 
 #userN {

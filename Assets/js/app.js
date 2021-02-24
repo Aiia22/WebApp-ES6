@@ -147,7 +147,7 @@ function postFetchForSignUp() {
   })
     .then((res) => res.json())
     .then((user) => {
-      localStorage.clear(); // If user signed in => clear it up
+      //localStorage.clear(); // If user signed in => clear it up
 
       localStorage.user = user; // Then store the user
       displayUserSetUp(user);
@@ -168,31 +168,33 @@ function userLogin() {
         password: passwordL.value,
       }),
     })
-      .then((res) => res.json())
-      .then((user) => {
-        fetch("http://localhost:3000/" + user.userId, {
-          method: "GET",
-        })
-          .then((res) => res.json())
-          .then((user) => {
-            localStorage.clear(); // If user signed in => clear it up
-            localStorage.user = user; // Then store the user
-            console.log(user);
-            valideUser(user);
-          });
+      .then(async (res) => {
+        if (res.ok) {
+          const user = await res.json();
+          fetch("http://localhost:3000/" + user.userId, {
+            method: "GET",
+          })
+            .then((res) => res.json())
+            .then((user) => {
+              localStorage.clear(); // If user signed in => clear it up
+              localStorage.user = user; // Then store the user
+              console.log(user, "fetch");
+              //valideUser(user);
+              displayUserSetUp(user);
+            });
+        } else {
+          throw new Error(
+            `Request rejected with status ${res.statusText}`,
+            alert("Login was unsuccessful, please check your email or password")
+          );
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        alert("Login was unsuccessful, please check your email or password"); //***** issue!!!!!!
+        login.reset();
       });
   });
-}
-
-function valideUser(user) {
-  console.log(user, "valideUser avant");
-  if (user) {
-    document.querySelector(".overlay").classList.remove("open");
-    displayUserSetUp(user);
-  } else if (res === "Invalid username or password...") {
-    alert("Login was unsuccessful, please check your email or password"); //***** issue!!!!!!
-  }
-  console.log(user, "valideUser après");
 }
 
 // Log toggle --> login/register (common functions)
@@ -203,14 +205,13 @@ function displayUserSetUp(user) {
   console.log(username, "display username");
   if (username !== "undefined" || username !== "null") {
     document.getElementById("userN").innerHTML = username;
-    //login.reset();
   } else {
     document.getElementById("userN").innerHTML = "Hello!";
-    console.log("azert");
+    console.log("No username");
   }
+  document.querySelector(".overlay").classList.remove("open");
   document.querySelector(".fa-caret-down").classList.add("visible");
-
-  console.log(username, "display username");
+  login.reset();
 }
 
 //Login out
