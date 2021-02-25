@@ -145,12 +145,28 @@ function postFetchForSignUp() {
       password: passwordL.value,
     }),
   })
-    .then((res) => res.json())
-    .then((user) => {
-      localStorage.clear(); // If user signed in => clear it up
-
-      localStorage.user = user; // Then store the user
-      displayUserSetUp(user);
+    .then(async (res) => {
+      if (res.ok) {
+        const user = await res.json();
+        fetch("http://localhost:3000/" + user.userId, {
+          method: "GET",
+        })
+          .then((res) => res.json())
+          .then((user) => {
+            localStorage.clear(); // If user signed in => clear it up
+            localStorage.user = user; // Then store the user
+            console.log(user, "fetch");
+            displayUserSetUp(user);
+            register.reset();
+          });
+      } else {
+        throw error(`Request rejected with status ${res.status}`);
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+      alert("We are sorry, a server error has occured, please try later... ");
+      window.location.reload();
     });
 }
 
