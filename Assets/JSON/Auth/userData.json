@@ -39,6 +39,14 @@
       "password": "4444",
       "level": "novice",
       "tier": "free"
+    },
+    {
+      "userId": "f54606f4-9057-4fca-aff4-ecbf0d650bd9",
+      "name": "Martine",
+      "email": "martine@azer.com",
+      "password": "2222",
+      "level": "novice",
+      "tier": "free"
     }
   ]
 }

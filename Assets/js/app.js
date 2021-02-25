@@ -147,7 +147,7 @@ function postFetchForSignUp() {
   })
     .then((res) => res.json())
     .then((user) => {
-      //localStorage.clear(); // If user signed in => clear it up
+      localStorage.clear(); // If user signed in => clear it up
 
       localStorage.user = user; // Then store the user
       displayUserSetUp(user);
@@ -155,46 +155,41 @@ function postFetchForSignUp() {
 }
 
 // Log toggle --> login
-function userLogin() {
-  login.addEventListener("submit", (e) => {
-    e.preventDefault();
-    fetch("http://localhost:3000/connect", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: emailL.value,
-        password: passwordL.value,
-      }),
+function userLogin(event) {
+  event.preventDefault();
+  fetch("http://localhost:3000/connect", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: emailL.value,
+      password: passwordL.value,
+    }),
+  })
+    .then(async (res) => {
+      if (res.ok) {
+        const user = await res.json();
+        fetch("http://localhost:3000/" + user.userId, {
+          method: "GET",
+        })
+          .then((res) => res.json())
+          .then((user) => {
+            localStorage.clear(); // If user signed in => clear it up
+            localStorage.user = user; // Then store the user
+            console.log(user, "fetch");
+            displayUserSetUp(user);
+            login.reset();
+          });
+      } else {
+        throw error(`Request rejected with status ${res.status}`);
+      }
     })
-      .then(async (res) => {
-        if (res.ok) {
-          const user = await res.json();
-          fetch("http://localhost:3000/" + user.userId, {
-            method: "GET",
-          })
-            .then((res) => res.json())
-            .then((user) => {
-              localStorage.clear(); // If user signed in => clear it up
-              localStorage.user = user; // Then store the user
-              console.log(user, "fetch");
-              //valideUser(user);
-              displayUserSetUp(user);
-            });
-        } else {
-          throw new Error(
-            `Request rejected with status ${res.statusText}`,
-            alert("Login was unsuccessful, please check your email or password")
-          );
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        alert("Login was unsuccessful, please check your email or password"); //***** issue!!!!!!
-        login.reset();
-      });
-  });
+    .catch((error) => {
+      console.log(error);
+      alert("Login was unsuccessful, please check your email or password"); //***** issue!!!!!!
+      login.reset();
+    });
 }
 
 // Log toggle --> login/register (common functions)
@@ -209,7 +204,7 @@ function displayUserSetUp(user) {
     document.getElementById("userN").innerHTML = "Hello!";
     console.log("No username");
   }
-  document.querySelector(".overlay").classList.remove("open");
+  document.querySelector(".overlay").classList.toggle("open");
   document.querySelector(".fa-caret-down").classList.add("visible");
   login.reset();
 }
