@@ -515,14 +515,21 @@ i.fa-caret-down {
 i.fa-caret-down.visible {
   display: block;
   color: #c5c6cb;
+  cursor: pointer;
+}
+
+i.fa-caret-down.visible:hover {
+  color: #ffff;
 }
 
 #userN {
   color: #c5c6cb;
+  margin-right: 7px;
 }
 
 .menu {
   position: relative;
+  top: -11px;
   padding: 11px 22px;
   font-size: 17px;
   background-color: rgba(51, 51, 51, 0.85);
@@ -541,6 +548,17 @@ i.fa-caret-down.visible {
 
 .userMenu:hover, .userMenu:active {
   color: #ffffff;
+}
+
+#logOutButton {
+  padding: 3px 6px;
+  margin: 0;
+  color: #333333;
+  font-size: small;
+  background-color: #ffffff;
+  border: 1px solid #333333;
+  border-radius: 22px;
+  outline: none !important;
 }
 
 .myGame {

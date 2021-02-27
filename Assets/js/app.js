@@ -140,9 +140,9 @@ function postFetchForSignUp() {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      name: usernameL.value,
-      email: emailL.value,
-      password: passwordL.value,
+      name: username.value,
+      email: email.value,
+      password: password.value,
     }),
   })
     .then(async (res) => {
@@ -158,9 +158,12 @@ function postFetchForSignUp() {
             console.log(user, "fetch");
             displayUserSetUp(user);
             register.reset();
+            document
+              .querySelector(".form-controler")
+              .classList.remove("success");
           });
       } else {
-        throw error(`Request rejected with status ${res.status}`);
+        throw new Error(`Request rejected with status ${res.status}`);
       }
     })
     .catch((error) => {
@@ -198,7 +201,7 @@ function userLogin(event) {
             login.reset();
           });
       } else {
-        throw error(`Request rejected with status ${res.status}`);
+        throw new Error(`Request rejected with status ${res.status}`);
       }
     })
     .catch((error) => {
