@@ -1,5 +1,7 @@
 const cors = require("cors");
 const express = require("express");
+const jwt = require("jsonwebtoken");
+
 const app = express();
 app.use(cors());
 app.options("*", cors());
@@ -7,6 +9,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 const fs = require("fs");
 const port = 3000;
+const accessTokenSecret = "tatianarules";
 const { v4: uuidv4 } = require("uuid");
 uuidv4();
 
@@ -21,8 +24,14 @@ app.post("/connect", (req, res) => {
   const user = users.find((u) => u.email === email && u.password === password);
 
   if (user) {
+    // Generate an access token
+    const accessToken = jwt.sign(
+      { username: user.username, tier: user.tier, level: user.level },
+      accessTokenSecret
+    );
+
     return res.send({
-      userId: user.userId,
+      accessToken,
     });
   }
   return res.send("Invalid username or password...");
