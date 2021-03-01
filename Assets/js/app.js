@@ -188,16 +188,24 @@ function userLogin(event) {
   })
     .then(async (res) => {
       if (res.ok) {
-        const user = await res.json();
+        const token = await res.text();
+        const a = JSON.parse(token);
+        console.log(a);
+        const user = jwt_decode(token);
+
         fetch("http://localhost:3000/" + user.userId, {
           method: "GET",
+          headers: {
+            authorization: "Bearer " + a.accessToken,
+          },
         })
           .then((res) => res.json())
-          .then((user) => {
+          .then((userInfo) => {
             localStorage.clear(); // If user signed in => clear it up
-            localStorage.user = user; // Then store the user
-            console.log(user, "fetch");
-            displayUserSetUp(user);
+            localStorage.user = userInfo; // Then store the user
+            localStorage.token = token;
+            console.log(userInfo, token);
+            displayUserSetUp(userInfo);
             login.reset();
           });
       } else {

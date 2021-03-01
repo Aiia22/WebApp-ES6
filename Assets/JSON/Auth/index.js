@@ -1,7 +1,7 @@
 const cors = require("cors");
 const express = require("express");
 const jwt = require("jsonwebtoken");
-
+const authMiddleware = require("./authMiddleware");
 const app = express();
 app.use(cors());
 app.options("*", cors());
@@ -26,7 +26,12 @@ app.post("/connect", (req, res) => {
   if (user) {
     // Generate an access token
     const accessToken = jwt.sign(
-      { username: user.username, tier: user.tier, level: user.level },
+      {
+        userId: user.userId,
+        username: user.username,
+        tier: user.tier,
+        level: user.level,
+      },
       accessTokenSecret
     );
 
@@ -69,7 +74,7 @@ app.post("/register", (req, res) => {
 });
 
 //Get ---->
-app.get("/:userId", (req, res) => {
+app.get("/:userId", authMiddleware.middleware, (req, res) => {
   const rawData = fs.readFileSync("userData.json");
   const users = JSON.parse(rawData).users;
 
