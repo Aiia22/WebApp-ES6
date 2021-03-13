@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="assets/css/genericpage.css" />
+<link rel="stylesheet" href="assets/css/genericpage.css" />
+   
    <link rel="stylesheet"
       href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css"
       integrity="sha384-q94+BZtLrkL1/ohfjR8c6L+A6qzNH9R2hBLwyoAfu3i/WCvQjzL2RQJ3uNHDISdU"
@@ -34,7 +34,7 @@
               <a href="index.html"
                 ><img
                   class="navIcons"
-                  src="assets/images/home.svg"
+                  src="Utilities/images/home.svg"
                   alt="home"
                   width="30"
               /></a>
@@ -50,7 +50,7 @@
                <button class="buttonNav" onclick="searchBoxNav(event)">
                 <img
                   class="navIcons"
-                  src="assets/images/loupe.svg"
+                  src="Utilities/images/loupe.svg"
                   alt="home"
                   width="30"
                 />
@@ -64,7 +64,7 @@
               <button class="buttonNav" onclick="logToggle(event)">
                 <img
                   class="navIcons"
-                  src="assets/images/user.svg"
+                  src="Utilities/images/user.svg"
                   alt="home"
                   width="30"
                 />
@@ -197,7 +197,7 @@
           <form method="get" action="/search" id="search">
             <img
               id="SearchIcon"
-              src="assets/images/loupe.svg"
+              src="Utilities/images/loupe.svg"
               alt="Search Icon"
               width="15"
             />
@@ -212,7 +212,7 @@
               <img
                 class="navIcons"
                 onclick="document.querySelector('.searchBox').value=''"
-                src="Assets/images/close.svg"
+                src="Utilities/images/close.svg"
                 alt="close box"
                 width="10"
               />
@@ -278,7 +278,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/github-sign2.svg"
+                    src="Utilities/images/github-sign2.svg"
                     alt="github"
                     width="30"
                 /></a>
@@ -287,7 +287,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/instagram2.svg"
+                    src="Utilities/images/instagram2.svg"
                     alt="instagram"
                     width="30"
                 /></a>
@@ -296,7 +296,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/twitter2.svg"
+                    src="Utilities/images/twitter2.svg"
                     alt="twitter"
                     width="30"
                 /></a>
@@ -305,7 +305,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/placeholder2.svg"
+                    src="Utilities/images/placeholder2.svg"
                     alt="location"
                     width="30"
                 /></a>
@@ -314,7 +314,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/facebook2.svg"
+                    src="Utilities/images/facebook2.svg"
                     alt="facebook"
                     width="30"
                 /></a>
@@ -336,7 +336,10 @@
       </div>
     </div>
     <!--Script-->
-    <script src="Assets/js/app.js"></script>
+   <script src="Utilities/JS/utilities.js"></script>
+    <script src="Auth/FrontEnd/JS/authUser.js"></script>
+    <script src="SearchBar/JS/searchBar.js"></script>
+    <script src="Auth/BackEnd/JS/jwt-decode.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"
         integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
         crossorigin="anonymous"></script>

@@ -1,13 +1,13 @@
-@import "utilities/config2";
-@import "utilities/grid";
-@import "utilities/grid2";
-@import "utilities/animations";
+@import "../../Utilities/scss/config2";
+@import "../../Utilities/scss/grid";
+@import "../../Utilities/scss/grid2";
+@import "../../Utilities/scss/animations";
 
-@import "componants/header";
-@import "componants/button";
-@import "componants/loginToggle";
-@import "componants/userMenu";
-@import "componants/chessboard";
+@import "../../assets/scss/componants/button";
+@import "../../assets/scss/componants/header";
+@import "../../Auth/FrontEnd/scss/loginToggle";
+@import "../../Auth/FrontEnd/scss/userMenu";
+@import "../../ChessBoard/scss/chessboard";
 
 * {
   margin: 0;

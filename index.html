@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="Assets/css/homepage.css" />
+    <link rel="stylesheet" href="assets/css/homepage.css" />
+
     <script
       src="https://kit.fontawesome.com/8995d23b9c.js"
       crossorigin="anonymous"
@@ -26,7 +27,7 @@
           <li>
             <img
               class="logo"
-              src="assets/images/logoApp2.png"
+              src="Utilities/images/logoApp2.png"
               alt="logo chess & meet"
               width="111"
             />
@@ -40,7 +41,7 @@
               <a href="index.html"
                 ><img
                   class="navIcons"
-                  src="assets/images/home.svg"
+                  src="Utilities/images/home.svg"
                   alt="home"
                   width="30"
               /></a>
@@ -54,7 +55,7 @@
               <button class="buttonNav" onclick="searchBoxNav(event)">
                 <img
                   class="navIcons"
-                  src="assets/images/loupe.svg"
+                  src="Utilities/images/loupe.svg"
                   alt="home"
                   width="30"
                 />
@@ -68,7 +69,7 @@
               <button class="buttonNav" onclick="logToggle(event)">
                 <img
                   class="navIcons"
-                  src="assets/images/user.svg"
+                  src="Utilities/images/user.svg"
                   alt="home"
                   width="30"
                 />
@@ -205,7 +206,7 @@
           <form method="get" action="/search" id="search">
             <img
               id="SearchIcon"
-              src="assets/images/loupe.svg"
+              src="Utilities/images/loupe.svg"
               alt="Search Icon"
               width="15"
             />
@@ -220,7 +221,7 @@
               <img
                 class="navIcons"
                 onclick="document.querySelector('.searchBox').value=''"
-                src="Assets/images/close.svg"
+                src="Utilities/images/close.svg"
                 alt="close box"
                 width="10"
               />
@@ -293,7 +294,7 @@
             <h3>Lorem, ipsum dolor.</h3>
             <img
               class="art subArticle"
-              src="Assets/images/chessPic.jpg"
+              src="Utilities/images/chessPic.jpg"
               alt="Chess board"
             />
             <p>
@@ -312,7 +313,7 @@
             <h3>Lorem, ipsum dolor.</h3>
             <img
               class="art subArticle"
-              src="Assets/images/chessPic.jpg"
+              src="Utilities/images/chessPic.jpg"
               alt="Chess board"
             />
             <p>
@@ -332,7 +333,7 @@
             <h3>Lorem, ipsum dolor.</h3>
             <img
               class="art subArticle"
-              src="Assets/images/chessPic.jpg"
+              src="Utilities/images/chessPic.jpg"
               alt="Chess board"
             />
             <p>
@@ -351,7 +352,7 @@
             <h3>Lorem, ipsum dolor.</h3>
             <img
               class="art subArticle"
-              src="Assets/images/chessPic.jpg"
+              src="Utilities/images/chessPic.jpg"
               alt="Chess board"
             />
             <p>
@@ -370,7 +371,7 @@
             <h3>Lorem, ipsum dolor.</h3>
             <img
               class="art subArticle"
-              src="Assets/images/chessPic.jpg"
+              src="Utilities/images/chessPic.jpg"
               alt="Chess board"
             />
             <p>
@@ -389,7 +390,7 @@
             <h3>Lorem, ipsum dolor.</h3>
             <img
               class="art subArticle"
-              src="Assets/images/chessPic.jpg"
+              src="Utilities/images/chessPic.jpg"
               alt="Chess board"
             />
             <p>
@@ -411,7 +412,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/github-sign.svg"
+                    src="Utilities/images/github-sign.svg"
                     alt="github"
                     width="30"
                 /></a>
@@ -420,7 +421,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/instagram.svg"
+                    src="Utilities/images/instagram.svg"
                     alt="instagram"
                     width="30"
                 /></a>
@@ -429,7 +430,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/twitter.svg"
+                    src="Utilities/images/twitter.svg"
                     alt="twitter"
                     width="30"
                 /></a>
@@ -438,7 +439,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/placeholder.svg"
+                    src="Utilities/images/placeholder.svg"
                     alt="location"
                     width="30"
                 /></a>
@@ -447,7 +448,7 @@
                 <a href="index.html"
                   ><img
                     class="footerIcons"
-                    src="assets/images/facebook.svg"
+                    src="Utilities/images/facebook.svg"
                     alt="facebook"
                     width="30"
                 /></a>
@@ -469,8 +470,10 @@
       </div>
     </div>
     <!--Script-->
-    <script src="Assets/js/app.js"></script>
-    <script src="Assets/js/jwt-decode.js"></script>
+    <script src="Utilities/JS/utilities.js"></script>
+    <script src="Auth/FrontEnd/JS/authUser.js"></script>
+    <script src="SearchBar/JS/searchBar.js"></script>
+    <script src="Auth/BackEnd/JS/jwt-decode.js"></script>
   </body>
   <!--Image by Denny Franzkowiak/mohamed ramzee  Pixabay-->
 </html>

@@ -1,11 +1,11 @@
-@import "utilities/config1";
-@import "utilities/grid";
-@import "utilities/animations";
+@import "../../Utilities/scss/config1";
+@import "../../Utilities/scss/grid";
+@import "../../Utilities/scss/animations";
 
-@import "componants/header";
-@import "componants/button";
-@import "componants/loginToggle";
-@import "componants/userMenu";
+@import "../../assets/scss/componants/button";
+@import "../../assets/scss/componants/header";
+@import "../../Auth/FrontEnd/scss/loginToggle";
+@import "../../Auth/FrontEnd/scss/userMenu";
 
 * {
   margin: 0;

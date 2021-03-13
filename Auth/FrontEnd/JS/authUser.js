@@ -1,31 +1,3 @@
-//Global variables
-const mainNav = document.getElementById("nav1");
-const searchNav = document.getElementById("nav2");
-const register = document.getElementById("registerForm");
-const login = document.getElementById("loginForm");
-const username = document.getElementById("usernameR");
-const email = document.getElementById("emailR");
-const password = document.getElementById("passwordR");
-const passwordCheck = document.getElementById("passwordCheckR");
-const usernameL = document.getElementById("usernameL");
-const emailL = document.getElementById("emailL");
-const passwordL = document.getElementById("passwordL");
-
-//Display SearchBox
-function searchBoxNav(event) {
-  event.preventDefault();
-  let displaySearchNav = searchNav.style.display;
-  let displayMainNav = mainNav.style.display;
-
-  if (displaySearchNav === "block" && displayMainNav === "none") {
-    searchNav.style.display = "none";
-    mainNav.style.display = "block";
-  } else {
-    searchNav.style.display = "block";
-    mainNav.style.display = "none";
-  }
-}
-
 //Display log toggle
 function logToggle(event) {
   event.preventDefault();
@@ -43,20 +15,6 @@ function userLogReg(event) {
   } else {
     register.style.display = "block";
     login.style.display = "none";
-  }
-}
-
-// Dipslay user menu
-function accessMenu(event) {
-  event.preventDefault();
-  if (document.querySelector(".overlayMenu").className === "overlayMenu") {
-    document.querySelector(".overlayMenu").classList.toggle("open");
-  } else if (
-    document.querySelector(".overlayMenu").className === "overlayMenu close"
-  ) {
-    document.querySelector(".overlayMenu ").classList.replace("close", "open");
-  } else {
-    document.querySelector(".overlayMenu").classList.replace("open", "close");
   }
 }
 
@@ -245,34 +203,16 @@ function logOut() {
   console.log("logout");
 }
 
-//// alternative storage:
-
-/* function storeInputsSignUp() {
-  let userDataSignUp = {
-    username: document.getElementById("usernameR").value,
-    email: document.getElementById("emailR").value,
-    password: document.getElementById("passwordR").value,
-  };
-  localStorage.setItem("userDataSignUp", JSON.stringify(userDataSignUp));
-  DisplayUsername(document.getElementById("usernameR").value);
-} */
-
-// Log toggle --> login
-/* function validateForm(event) {
+// Dipslay user menu
+function accessMenu(event) {
   event.preventDefault();
-  const emailLValue = emailL.value.trim();
-  const passwordLValue = passwordL.value.trim();
-  const userData = JSON.parse(window.localStorage.getItem("userDataSignUp"));
-  console.log(userData);
-  const email = userData.email.trim();
-  const username = userData.username.trim();
-  console.log(username);
-  const password = userData.password.trim();
-
-  if (emailLValue === email && passwordLValue === password) {
-    userLogin();
+  if (document.querySelector(".overlayMenu").className === "overlayMenu") {
+    document.querySelector(".overlayMenu").classList.toggle("open");
+  } else if (
+    document.querySelector(".overlayMenu").className === "overlayMenu close"
+  ) {
+    document.querySelector(".overlayMenu ").classList.replace("close", "open");
   } else {
-    alert("Login was unsuccessful, please check your email or password");
-    return false;
+    document.querySelector(".overlayMenu").classList.replace("open", "close");
   }
-} */
+}
